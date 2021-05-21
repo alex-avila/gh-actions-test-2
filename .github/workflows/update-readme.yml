@@ -16,6 +16,9 @@ jobs:
         env:
           BASE_REF: ${{ github.event.pull_request.base.ref }}
 
+      - name: Print it again
+        run: echo "$BASE_REF"
+
       # - uses: actions/checkout@v2
       #   with:
       #     ref: {{ github.event.pull_request.base.ref }}
