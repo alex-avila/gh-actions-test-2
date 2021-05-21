@@ -14,7 +14,7 @@ jobs:
       - name: Print name of base branch
         run: echo "$REF"
         env:
-          REF: ${{ github.event.pull_request.ref }}
+          REF: ${{ github.event.pull_request.head.ref }}
 
       # - name: Print it again
       #   run: echo "$BASE_REF"
