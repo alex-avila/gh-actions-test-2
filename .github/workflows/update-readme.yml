@@ -32,4 +32,4 @@ jobs:
           git config --global user.name "alex-avila"
           git add README.md
           git commit -m "Add a new line to README.md"
-          git push
+          git push --force
