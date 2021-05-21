@@ -28,6 +28,8 @@ jobs:
 
       - name: Git add, commit and push
         run: |
+          git config --global user.email "alex.avilx@gmail.com"
+          git config --global user.name "alex-avila"
           git add README.md
           git commit -m "Add a new line to README.md"
           git push
