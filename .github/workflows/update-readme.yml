@@ -11,25 +11,25 @@ jobs:
   updateReadme:
     runs-on: ubuntu-latest
     steps:
-      # - name: Print name of base branch
-      #   run: echo "$BASE_REF"
-      #   env:
-      #     BASE_REF: ${{ github.event.pull_request.base.ref }}
+      - name: Print name of base branch
+        run: echo "$REF"
+        env:
+          REF: ${{ github.event.pull_request.head.ref }}
 
       # - name: Print it again
       #   run: echo "$BASE_REF"
 
-      - uses: actions/checkout@v2
-        with:
-          ref: ${{ github.event.pull_request.base.ref }}
+      # - uses: actions/checkout@v2
+      #   with:
+      #     ref: ${{ github.event.pull_request.ref }}
 
-      - name: Update README.md
-        run: echo "a new line" >> README.md
+      # - name: Update README.md
+      #   run: echo "a new line" >> README.md
 
-      - name: Git add, commit and push
-        run: |
-          git config --global user.email "alex.avilx@gmail.com"
-          git config --global user.name "alex-avila"
-          git add README.md
-          git commit -m "Add a new line to README.md"
-          git push
+      # - name: Git add, commit and push
+      #   run: |
+      #     git config --global user.email "alex.avilx@gmail.com"
+      #     git config --global user.name "alex-avila"
+      #     git add README.md
+      #     git commit -m "Add a new line to README.md"
+      #     git push --force
