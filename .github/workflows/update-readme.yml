@@ -1,0 +1,30 @@
+name: updateReadme
+
+on:
+  pull_request_review:
+    types: [ submitted ]
+    branches: [ 'release/*' ]
+
+  workflow_dispatch:
+
+jobs:
+  updateReadme:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print name of base branch
+        run: echo "$BASE_REF"
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+
+      # - uses: actions/checkout@v2
+      #   with:
+      #     ref: {{ github.event.pull_request.base.ref }}
+
+      # - name: Update README.md
+      #   run: echo "a new line" >> README.md
+
+      # - name: Git add, commit and push
+      #   run: |
+      #     git add README.md
+      #     git commit -m "Add a new line to README.md"
+      #     git push
